@@ -1,16 +1,39 @@
-# React + Vite
+# Type or Die 🧟
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A post-apocalyptic browser typing game built with React + Vite.
 
-Currently, two official plugins are available:
+Zombies shuffle toward you, each carrying a word on their chest. Type the word to destroy the zombie before it reaches you. One touch means death.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- 🧟 **Zombie horde** — zombies spawn and move toward the player
+- ⌨️ **ZType-style targeting** — start typing to auto-target the nearest matching zombie; highlighted progress shows typed characters
+- 📈 **Progressive difficulty** — each wave (every 30 s) increases zombie speed and spawn rate
+- 📊 **Stats tracking** — real-time WPM, error count, zombie count, and end-game accuracy
+- 💀 **Game over** — a single zombie touch ends the game; full stat summary is shown
+- 🎨 **Post-apocalyptic theme** — dark, gritty colour palette with neon-green / blood-red accents
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Controls
 
-## Expanding the ESLint configuration
+| Key | Action |
+|-----|--------|
+| Letters | Type the targeted zombie word |
+| Backspace | Delete last character |
+| Escape | Cancel current target |
+| Enter / Space | Start game / Restart |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Then open <http://localhost:5173> in your browser.
+
+## Build
+
+```bash
+npm run build   # production bundle → dist/
+npm run preview # preview the production build
+```

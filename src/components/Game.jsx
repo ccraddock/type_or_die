@@ -71,7 +71,7 @@ export default function Game() {
     setTypedText('');
     setTargetId(null);
     setWave(1);
-    setStats({ wpm: 0, errors: 0, kills: 0 });
+    setStats({ wpm: 0, errors: 0, kills: 0, totalChars: 0 });
     setFlashError(false);
     setScreen('playing');
   }, []);
@@ -242,7 +242,7 @@ export default function Game() {
 
       // Sync render state
       setZombies([...g.zombies]);
-      setStats({ wpm, errors: g.errors, kills: g.kills });
+      setStats({ wpm, errors: g.errors, kills: g.kills, totalChars: g.totalChars });
 
       animFrameRef.current = requestAnimationFrame(loop);
     };

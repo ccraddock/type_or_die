@@ -12,10 +12,9 @@ export default function GameOver({ stats, wave, onRestart }) {
     return () => window.removeEventListener('keydown', handler);
   }, [onRestart]);
 
-  const accuracy =
-    stats.kills + stats.errors > 0
-      ? Math.round((stats.kills / (stats.kills + stats.errors)) * 100)
-      : 0;
+  // Accuracy = correctly typed characters / (correct chars + error keystrokes)
+  const totalAttempted = (stats.totalChars || 0) + stats.errors;
+  const accuracy = totalAttempted > 0 ? Math.round(((stats.totalChars || 0) / totalAttempted) * 100) : 0;
 
   return (
     <div className="screen gameover-screen">
